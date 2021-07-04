@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="/bundle.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-content">
+      <header class="navbar" style="background-color: #fafafa;">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="navbar-menu">
+          <div class="navbar-start"></div>
+      
+          <div class="navbar-end" style="margin-right: 1rem;">
+            <a href="/" class="navbar-item" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
+            <a href="/project/index.html" class="navbar-item" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
+          </div>
+        </div>
+      </header>
+
+      <div id="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
+
+            <div class="">
+              <figure class="image is-96x96">
+                <img class="is-rounded" src="/img/wangzan.jpg" alt="...">
+              </figure>
+            </div>
+
+            <div style="padding-top: 0.6rem; padding-bottom: 1rem;">
+              <span id="name-des" style="margin-top: 8px; margin-left: 4px; margin-right: 16px; font-weight: bold; font-size: 1.4rem;">Zan Wang</span>
+              <span id="title-des">
+                <a style="text-decoration: none; color: #3b4351;" href="https://github.com/silverster98/">
+                  <img src="/img/github.370491da.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
+                  Github
+                </a>
+                <span>/</span>
+                <a style="text-decoration: none; color: #1296db;" href="https://drive.silvester.wang/">
+                  <img src="/img/onedrive2.svg" alt="" style="height: 16px; width: 16px; transform: translateY(2px);" />
+                  OneDrive
+                </a>
+              </span>
+            </div>
+
+            <div class="content">
+              <div id="about-me" class="hero">
+                <div class="hero-body" style="padding: 1.5rem 0rem;">
+                  <h4 style="font-weight: bold;">About Me</h4>
+                  <p style="padding-left: 1rem;">Hi, I am Zan Wang, a first-year Ph.D. student in the School of Computer Science at <strong>Beijing Institute of Technology(BIT)</strong>. I am now advised by Prof. <a href="https://liangwei-bit.github.io/web/">Wei Liang</a> in <strong>Media Computing and Intelligent Systems Lab</strong>. My research interests are <em>Computer Vision</em>, <em>Graphics</em> and <em>Machine Learning</em>. In addition, I am also interested in hardware (FPGA & Embedded System) and web development.</p>
+                </div>
+              </div>
+
+              <div id="publications" class="hero">
+                <div class="hero-body" style="padding: 1.5rem 0rem;">
+                  <h4 style="font-weight: bold;">Publications</h4>
+                  <div class="publications">
+
+                    <my-publication v-for="(pub, index) in pubs" v-bind:key="index" v-bind:pub="pub"></my-publication>
+
+                  </div>
+                </div>
+              </div>
+
+              <div id="contacts" class="hero">
+                <div class="hero-body" style="padding: 1.5rem 0rem;">
+                  <h4 style="font-weight: bold;">Contacts</h4>
+                  <ul>
+                    <li><strong>Email: </strong>zanwang98[at]gmail[dot]com</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter" style="color: #7f7f7f;">
+          <p>Built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a> and deployed on Github Page.</p>
+          <p>Designed and coded by Zan Wang. Deployed by Github Action. Open source on <a href="https://github.com/Silverster98/github-action-test">Github</a>.</p>
+          <p>© 2019 - {{ currentYear }} Zan Wang</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+<script>
+  Vue.component('my-publication', {
+    props: ['pub'],
+    template: `
+      <div class="publication">
+        <div class="columns">
+          <div class="column is-4">
+            <div class="card-image">
+              <img v-bind:src="pub.figure">
+            </div>
+          </div>
+          <div class="column is-8">
+            <p class="pub-title"><strong><a v-bind:href="pub.publication_link">{{ pub.title }}</a></strong>. <em>{{ pub.publisher }}</em></p>
+            <p class="pub-authors"><span v-html="pub.authors"></span></p>
+            <div class="pub-links"><a v-bind:href="pub.paper_link">paper</a> / <a v-on:click="bibtexActive=!bibtexActive">bibtex</a> / <a v-bind:href="pub.video_link">video</a> / <a v-bind:href="pub.code_link">code</a></div>
+          </div>
+        </div>
+        <div v-if="bibtexActive" class="bibtex-container">
+          <div class="" style="padding-top: 0.4em;">
+            <pre class="code"><code>{{ pub.bibtex }}</code></pre>
+          </div>
+          <div class="" style="padding-top: 0; padding-bottom: 0;">
+            <button class="button is-small is-primary" v-on:click="copyBibtex">Copy</button>
+            <button class="button is-small" v-on:click="bibtexActive=!bibtexActive">Cancel</button>
+          </div>
+        </div>
+      </div>
+    `,
+    data: function() {
+      return {
+        bibtexActive: false,
+      }
+    },
+    methods: {
+      copyBibtex: function() {
+        let input = document.createElement('textarea')
+        document.body.appendChild(input)
+        input.value = this.$props['pub']['bibtex']
+        input.select()
+        document.execCommand('copy')
+        document.body.removeChild(input)
+        this.bibtexActive = false
+      }
+    },
+  })
+
+  let ownername = 'Zan Wang'
+  let publications = [
+    // {
+    //   "figure": '/img/triangular.jpg',
+    //   "page": 'https://arxiv.org/abs/2105.04088',
+    //   "title": 'PEARL: Parallelized Expert-Assisted Reinforcement Learning for Scene Rearrangement Planning',
+    //   "publisher": 'arxiv',
+    //   "authors": ['Hanqing Wang', 'Zan Wang', 'Wei Liang', 'Lap-Fai Yu'],
+    //   "paper": 'https://arxiv.org/pdf/2105.04088',
+    //   "video": '/',
+    //   "code": '/',
+    //   "abstract": '',
+    //   "bibtex": ``
+    // }
+  ]
+
+  function getAuthorHtml(authors, ownername) {
+    dom = []
+    for (a of authors) {
+      // console.log(`--${a}--${ownername}--`)
+      if (a === ownername) {
+        dom.push(`<strong>${a}</strong>`)
+      } else {
+        dom.push(`${a}`)
+      }
+    }
+
+    return dom.join(', ')
+  }
+
+  function getBibtexHtml(bibtex) {
+    return '' + bibtex
+  }
+
+  function getPubsFromArray() {
+    let pubs = []
+    for (item of publications) {
+      pub = {}
+      pub['figure'] = item['figure']
+      pub['publication_link'] = item['page']
+      pub['title'] = item['title']
+      pub['publisher'] = item['publisher']
+      pub['authors'] = getAuthorHtml(item['authors'], ownername)
+      pub['paper_link'] = item['paper']
+      pub['video_link'] = item['video']
+      pub['code_link'] = item['code']
+      pub['abstract'] = item['abstract']
+      pub['bibtex'] = getBibtexHtml(item['bibtex'])
+
+      pubs.push(pub)
+    }
+    return pubs
+  }
+
+  let app = new Vue({
+    el: '#app',
+    data: {
+      pubs: getPubsFromArray(),
+      currentYear: (new Date()).getFullYear()
+    },
+  })
+</script>
+
+</html>

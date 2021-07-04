@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PROJECTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    }
+
+    a.repo-link {
+      color: #000000;
+    }
+    a.repo-link:hover {
+      text-decoration: underline;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="main-content">
+    <header class="navbar" style="background-color: #fafafa;">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start"></div>
+    
+        <div class="navbar-end" style="margin-right: 1rem;">
+          <a href="/" class="navbar-item" style="background-color: #fafafa; color: #7f7f7f;">HOME</a>
+          <a href="/project/index.html" class="navbar-item" style="background-color: #fafafa; color: #7f7f7f;">PROJECTS</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="columns" style="padding-bottom: 2rem;">
+      <div class="column is-half is-offset-one-quarter">
+
+        <div style="padding: 1rem 0rem;">
+          <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Projects</span></div>
+          <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some projects I participated in.</span></div>
+        </div>
+
+        <my-repo v-for="(repo, index) in projects" v-bind:key="index" v-bind:repo="repo"></my-repo>
+
+        <div style="padding: 1rem 0rem;">
+          <div><span style="font-weight: bold; font-size: 1.4rem; color: #000000;">Gadgets</span></div>
+          <div style="padding: 0.6rem 0rem;"><span style="font-size: 1rem;">Some toy programs within a thousand lines of code.</span></div>
+        </div>
+
+        <my-repo v-for="(repo, index) in gadgets" v-bind:key="index" v-bind:repo="repo"></my-repo>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter" style="color: #7f7f7f;">
+        <p>Built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a> and deployed on Github Page.</p>
+        <p>Designed and coded by Zan Wang. Deployed by Github Action. Open source on <a href="https://github.com/Silverster98/github-action-test">Github</a>.</p>
+        <p>© 2019 - {{ currentYear }} Zan Wang</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+<script>
+
+Vue.component('my-repo', {
+  props: ['repo'],
+  template: `
+  <div class="box">
+    <article class="media">
+      <div class="media-left"></div>
+      <div class="media-content">
+        <div class="content" style="padding-bottom: 0.25rem;">
+          <p>
+            <a class="repo-link" v-bind:href="repo.link"><strong style="font-size: 18px">{{ repo.title }}</strong></a>
+            <br>
+            <span v-html="repo.content"></span>
+          </p>
+        </div>
+        <nav class="level">
+          <div class="level-left">
+            
+            <a v-bind:href="repo.link" class="level-item" aria-label="reply">
+                <img v-bind:src="repo.stars" alt="" style="height: auto; width: auto; transform: translateY(2px);"/>
+            </a>
+
+            <a v-bind:href="repo.link" class="level-item" aria-label="reply">
+                <img v-bind:src="repo.forks" alt="" style="height: auto; width: auto; transform: translateY(2px);"/>
+            </a>
+
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+  `,
+})
+
+function getProjects(repo, key) {
+  if (repo[key] == undefined) {
+    return []
+  } else {
+    projects = repo[key]
+    for (let i = 0; i < projects.length; i++) {
+      projects[i]["link"] = "https://github.com/" + projects[i]["title"]
+      projects[i]["stars"] = "https://img.shields.io/github/stars/" + projects[i]["title"] + "?style=social"
+      projects[i]["forks"] = "https://img.shields.io/github/forks/" + projects[i]["title"] + "?style=social"
+    }
+    return projects
+  }
+}
+
+let app = new Vue({
+  el: '#app',
+  data: {
+    myrepo: {},
+    currentYear: (new Date()).getFullYear()
+  },
+  computed: {
+    projects: function() {
+      return getProjects(this.myrepo, "projects")
+    },
+    gadgets: function() {
+      // return getGadgets(this.myrepo)
+      return getProjects(this.myrepo, "gadgets")
+    }
+  },
+  methods: {
+    getrepo: function() {
+      let vm = this
+      axios.get('./data.json')
+        .then(function (response) {
+          vm.myrepo = response.data
+        })
+    }
+  }
+})
+
+app.getrepo()
+
+</script>
+</html>
