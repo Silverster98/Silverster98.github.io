@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Zan Wang</title>
+  
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  
+  <script src="https://kit.fontawesome.com/edbfd41333.js" crossorigin="anonymous"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+  </script>
+  <script src="./js/main.js" type="module"></script>
+</head>
+
+<body>
+<div id="app">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <nav class="level">
+        <div class="level-left"></div>
+
+        <div class="level-right">
+          <p class="level-item nav-item"><a href="./index.html">About</a></p>
+          <p class="level-item nav-item"><strong>Publications</strong></p>
+          <p class="level-item nav-item"><a href="./pdfs/wangzan_cv.pdf">CV</a></p>
+        </div>
+      </nav>
+
+      <h3 class="title is-3 page-title">Publications</h3>
+      <hr>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 0em 3em;">
+    <div class="container is-max-desktop">
+      <my-publication v-for="(pub, index) in pubs" v-bind:key="index" v-bind:pub="pub"></my-publication>
+    </div>
+  </section>
+
+  <footer class="footer foot">
+    <div class="container is-max-desktop">
+      <hr>
+      <div class="block has-text-centered">
+        <p> © {{ currentYear }} • Zan Wang • Github Page </p> 
+        <p>Powered by <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

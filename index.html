@@ -3,142 +3,15 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Zan Wang</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <style>
-    element {
-      --main-bg-color: #fafafa;
-    }
-
-    html {
-      height: 100%;
-      background-color: var(--main-bg-color);
-    }
-
-    body {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      background-color: var(--main-bg-color);
-    }
-
-    p {
-      font-size: 1.1em;
-      color: #2f2f2f;
-    }
-
-    a {
-      color: #8a8a8a;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #4a4a4a;
-    }
-
-    #app {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .my-section {
-      flex: 1 0 auto;
-      margin: 1em;
-    }
-
-    .my-basic-info {
-      margin-top: 1.5em;
-      padding: 2.5em 0.2em;
-      display: flex;
-    }
-
-    .my-name {
-      padding-left: 3em;
-    }
-
-    .my-name p {
-      font-size: 1em;
-    }
-
-    .my-name a {
-      color: #58B2DC;
-    }
-
-    .my-block {
-      padding: 1.5em 0;
-    }
-
-    .my-title {
-      font-size: 28px;
-      font-weight: 600;
-      padding: 0 0.1em 0.5em 0.1em;
-    }
-
-    .my-p {
-      text-align: justify;
-      padding: 0 0.35em;
-    }
-
-    .my-p a {
-      color: #58B2DC;
-    }
-
-    .publication {
-      padding: 0.75em 0.5em;
-    }
-
-    .pub-img {
-      padding-top: 1em;
-    }
-
-    .pub-title {
-      color: #2f2f2f;
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-top: 0.2em;
-    }
-
-    .pub-authors {
-      font-size: 1.1em;
-    }
-
-    .pub-links a {
-      color: #58B2DC;
-    }
-
-    .pub-abstract {
-      color: #FF8247;
-      font-size: 1em;
-    }
-
-    .pub-code {
-      font-size: 0.9em;
-      line-height: 1.2;
-      padding: 1em 1.25em;
-    }
-
-    .my-footer {
-      margin: 1em;
-      font-size: 0.9em;
-      background-color: var(--main-bg-color);
-    }
-
-    @media screen and (min-width: 1000px) {
-      .is-960px {
-        flex: none;
-        width: 960px;
-      }
-    }
-
-    .live2d-pos {
-      position: absolute;
-      right: 5%;
-      top: 35%;
-      z-index: -1;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/main.css">
+  
+  <script src="https://kit.fontawesome.com/edbfd41333.js" crossorigin="anonymous"></script>
   <script type="importmap">
     {
       "imports": {
@@ -146,258 +19,93 @@
       }
     }
   </script>
+  <script src="./js/main.js" type="module"></script>
 </head>
 
 <body>
-  <div id="app">
-    <div class="my-section">
-      <div class="columns is-centered">
-        <div class="column is-960px">
-          <div class="my-basic-info" style="position: relative;">
-            <div>
-              <figure class="image is-128x128">
-                <img class="is-rounded" src="./img/wangzan.jpg" alt="...">
-              </figure>
+<div id="app">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <nav class="level">
+        <div class="level-left"></div>
+
+        <div class="level-right">
+          <p class="level-item nav-item"><strong>About</strong></p>
+          <p class="level-item nav-item"><a href="./publication.html">Publications</a></p>
+          <p class="level-item nav-item"><a href="./pdfs/wangzan_cv.pdf">CV</a></p>
+        </div>
+      </nav>
+
+      <h3 class="title is-3 page-title">About</h3>
+      <hr>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 0em 3em;">
+    <div class="container is-max-desktop">
+      <div class="columns is-variable is-5">
+        <div class="column is-3">
+          <div class="block has-text-centered avatar">
+            <figure class="image is-1by1">
+              <img class="is-rounded" src="./images/wangzan.jpg" alt="Zan Wang">
+            </figure>
+
+            <p class="name">Zan Wang (王赞)</p>
+            <p class="slogan">Going to Unknown! 🏃🏻</p>
+
+            <div class="block has-text-dark">
+              <span class="icon icon-link">
+                <a href="mailto: zanwang98@gmail.com">
+                  <i class="fa-solid fa-envelope fa-xl"></i></a>
+              </span>
+              <span class="icon icon-link">
+                <a href="https://scholar.google.com/citations?user=vZxFyK8AAAAJ">
+                  <i class="fa-brands fa-google-scholar fa-xl"></i></a>
+              </span>
+              <span class="icon icon-link">
+                <a href="https://github.com/silverster98/">
+                  <i class="fa-brands fa-github fa-xl"></i></a>
+              </span>
+              <span class="icon icon-link">
+                <a href="https://twitter.com/silvester_wang">
+                  <i class="fa-brands fa-twitter fa-xl"></i></a>
+              </span>
             </div>
-            <div class="my-name">
-              <h1 class="my-title"> Zan Wang (王赞)</h1>
-
-              <p> <a href="mailto: zanwang98@gmail.com">Email</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=vZxFyK8AAAAJ">Google Scholar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/silverster98/">Github</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">CV</a> </p>
-            </div>
-            <canvas id="live2d" class="live2d live2d-pos" width="128" height="128"></canvas>
           </div>
+        </div>
 
-          <div id="about-me" class="my-block">
-            <h1 class="my-title">Short Bio</h1>
-            <p class="my-p">Hi, I am Zan Wang, a second-year Ph.D. candidate in the School of Computer Science, Beijing Institute of Technology (BIT), Beijing. I am currently working in <i>Visual <b>P</b>erception & Human-computer <b>I</b>nteraction Lab (PI Lab)</i>, advised by Prof. <a href="https://liangwei-bit.github.io/web/">Wei Liang</a>.
-            I have been interning at <i>Beijing Institute for General Artificial Intelligence (BIGAI)</i> from Oct. 2021 to now, under the supervision of vision team leader, Dr. <a href="https://siyuanhuang.com/">Siyuan Huang</a>.
-            Before beginning my Ph.D. study, I received my B.S. in Internet of Things Engineering from Beijing Institute of Technology (BIT) in June 2020.</p>
-
-            <p class="my-p" style="margin-top:0.6em">My research interests lie in the field of Computer Vision, Graphics, and Deep Learning. Currently, I am focusing on the research of human-scene interaction (HSI), goal-oriented motion generation, and 3D representation learning.
-            In addition, I am also interested in hardware system design (<em>e.g.</em>, FPGA) and web development.</p>
+        <div class="column is-9">
+          <div class="content about">
+            <p>👋 Yahaha! You found me!</p>
+            <p>I am Zan Wang.</p>
+            <ul>
+              <li>PhD student @ <a href="http://bit.edu.cn/">Beijing Institute of Technology</a> (CS, 2021.09 - present).</li>
+              <li>Master student @ <a href="http://bit.edu.cn/">Beijing Institute of Technology</a> (CS, 2020.09 - 2021.06).</li>
+              <li>Bachelor of Engineering @ <a href="http://bit.edu.cn/">Beijing Institute of Technology</a> (IoT, 2016.08 - 2020.06).</li>
+            </ul>
+            <p>
+              My research interests lie in Computer Vision, Graphics, and Robotics. Currently, I am focusing on human-scene interaction (HSI), goal-oriented motion generation, and 3D representation learning.
+            </p>
+            <p>
+              My mentor in BIT is <a href="https://liangwei-bit.github.io/web/">Prof. Wei Liang</a>, who is really lovely.
+              I have been interning at <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a> since Oct. 2021, under the supervision of vision team leader <a href="https://siyuanhuang.com/">Dr. Siyuan Huang</a>.
+            </p>
           </div>
-
-          <div id="publications" class="my-block">
-            <h1 class="my-title">Publications</h1>
-            <my-publication v-for="(pub, index) in pubs" v-bind:key="index" v-bind:pub="pub"></my-publication>
-          </div>
-
         </div>
       </div>
     </div>
+  </section>
 
-    <footer class="my-footer">
-      <div class="columns is-centered">
-        <div class="column is-960px">
-          <hr>
-          <p class="has-text-centered">This website is designed and coded by Zan Wang, built with <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a>, and deployed on Github Page.</a></p>
-          <p class="has-text-centered">© 2019 - {{ currentYear }} Zan Wang</p>
-        </div>
+  <footer class="footer foot">
+    <div class="container is-max-desktop">
+      <hr>
+      <div class="block has-text-centered">
+        <p> © {{ currentYear }} • Zan Wang • Github Page </p> 
+        <p>Powered by <a href="https://vuejs.org/index.html">Vue.js</a> and <a href="https://bulma.io/">Bulma</a>.</p>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+
+</div>
 </body>
-
-<script type="module">
-  import { createApp } from 'vue'
-
-  let ownername = 'Zan Wang'
-  let co_authors_link = {
-    'Wei Liang': 'https://liangwei-bit.github.io/web/',
-    'Hanqing Wang': 'https://hanqingwangai.github.io/',
-    'Siyuan Huang': 'https://siyuanhuang.com/',
-    'Yixin Chen': 'https://yixchen.github.io/',
-    'Tengyu Liu': 'http://tengyu.ai/',
-    'Yixin Zhu': 'https://yzhu.io/',
-    'Lap-Fai Yu': 'https://craigyuyu.github.io/home/',
-    'Jiangyong Huang': 'https://huangjy-pku.github.io/',
-    'William Yicheng Zhu': '/',
-    'Baoxiong Jia': 'https://buzz-beater.github.io/',
-    'Xiaojian Ma': 'https://web.cs.ucla.edu/~xm/',
-    'Qing Li': 'https://liqing-ustc.github.io/',
-    'Puhao Li': 'https://xiaoyao-li.github.io/',
-    'Song-Chun Zhu': 'http://www.stat.ucla.edu/~sczhu/',
-  }
-  let publications = [
-    // {
-    //   "figure": './img/scenediffuser.png',
-    //   "title": '',
-    //   "publisher": 'arXiv',
-    //   "authors": [],
-    //   "equal": ['Siyuan Huang', 'Zan Wang'],
-    //   "links": {},
-    //   "bibtex": ``,
-    //   "abstract": ''
-    // },
-    {
-      "figure": './img/scenediffuser.png',
-      "title": 'Diffusion-based Generation, Optimization, and Planning in 3D Scenes',
-      "publisher": 'CVPR23',
-      "authors": ['Siyuan Huang', 'Zan Wang', 'Puhao Li', 'Baoxiong Jia', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Song-Chun Zhu'],
-      "equal": ['Siyuan Huang', 'Zan Wang'],
-      "links": {
-        "paper": "https://scenediffuser.github.io/paper.pdf",
-        "arXiv": 'https://arxiv.org/abs/2301.06015',
-        "supp": 'https://scenediffuser.github.io/supp.pdf',
-        "project": 'https://scenediffuser.github.io/',
-        "code": 'https://github.com/scenediffuser/Scene-Diffuser',
-        "huggingface": "https://huggingface.co/spaces/SceneDiffuser/SceneDiffuserDemo",
-      },
-      "bibtex": `@inproceedings{huang2023diffusion,
-  title={Diffusion-based Generation, Optimization, and Planning in 3D Scenes},
-  author={Huang, Siyuan and Wang, Zan and Li, Puhao and Jia, Baoxiong and Liu, Tengyu and Zhu, Yixin and Liang, Wei and Zhu, Song-Chun},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2023}
-}`,
-      "abstract": ''
-    },
-    {
-      "figure": './img/gvue.png',
-      "title": 'Perceive, Ground, Reason, and Act: A Benchmark for General-purpose Visual Representation',
-      "publisher": 'arXiv',
-      "authors": ['Jiangyong Huang', 'William Yicheng Zhu', 'Baoxiong Jia', 'Zan Wang', 'Xiaojian Ma', 'Qing Li', 'Siyuan Huang'],
-      "equal": ['Jiangyong Huang', 'William Yicheng Zhu'],
-      "links": {
-        "arXiv": 'https://arxiv.org/abs/2211.15402',
-        "project": 'https://sites.google.com/view/g-vue',
-        "code": 'https://github.com/wllmzhu/G-VUE',
-      },
-      "bibtex": `@article{huang2022perceive,
-  title={Perceive, Ground, Reason, and Act: A Benchmark for General-purpose Visual Representation},
-  author={Huang, Jiangyong and Zhu, William Yicheng and Jia, Baoxiong and Wang, Zan and Ma, Xiaojian and Li, Qing and Huang, Siyuan},
-  journal={arXiv preprint arXiv:2211.15402},
-  year={2022}
-}`,
-      "abstract": ''
-    },
-    {
-      "figure": './img/humanise.png',
-      "title": 'HUMANISE: Language-conditioned Human Motion Generation in 3D Scenes',
-      "publisher": 'NeurIPS22',
-      "authors": ['Zan Wang', 'Yixin Chen', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Siyuan Huang'],
-      "equal": [],
-      "links": {
-        "paper": 'https://silvester.wang/HUMANISE/paper.pdf',
-        "arXiv": 'https://arxiv.org/abs/2210.09729',
-        "project": 'https://silvester.wang/HUMANISE/',
-        "code": 'https://github.com/Silverster98/HUMANISE',
-        "data": 'https://docs.google.com/forms/d/e/1FAIpQLSfzhj2wrRLqAXFVOTn8K5NDN-J_5HueRTohMAlayqBuPPWA1w/viewform?usp=sf_link',
-      },
-      "bibtex": `@inproceedings{wang2022humanise,
-  title={HUMANISE: Language-conditioned Human Motion Generation in 3D Scenes},
-  author={Wang, Zan and Chen, Yixin and Liu, Tengyu and Zhu, Yixin and Liang, Wei and Huang, Siyuan},
-  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2022}
-}`,
-      "abstract": ''
-    },
-    {
-      "figure": './img/pearl.png',
-      "title": 'PEARL: Parallelized Expert-Assisted Reinforcement Learning for Scene Rearrangement Planning',
-      "publisher": 'arXiv',
-      "authors": ['Hanqing Wang', 'Zan Wang', 'Wei Liang', 'Lap-Fai Yu'],
-      "equal": [],
-      "links": {
-        "arXiv": 'https://arxiv.org/abs/2105.04088',
-      },
-      "bibtex": `@article{wang2021pearl,
-  title={PEARL: Parallelized Expert-Assisted Reinforcement Learning for Scene Rearrangement Planning},
-  author={Wang, Hanqing and Wang, Zan and Liang, Wei and Yu, Lap-Fai},
-  journal={arXiv preprint arXiv:2105.04088},
-  year={2021}
-}`,
-      "abstract": ''
-    },
-  ]
-
-  function getAuthorHtml(authors, ownernames, equal) {
-    let dom = []
-    for (let a of authors) {
-      let ec = equal.includes(a) ? '*' : ''
-      if (a === ownername) {
-        dom.push(`<span style="color: #2f2f2f; font-weight: 500;">${a}` + ec + `</span>`)
-      } else {
-        dom.push(`<span style="font-weight: 500;"><a href="${co_authors_link[a]}">${a}` + ec + `</a></span>`)
-      }
-    }
-    return dom.join(', ')
-  }
-
-  function getPaperLinks(pub_links) {
-    let links = ''
-    for (let key in pub_links) {
-      links += `&nbsp;&nbsp;<a href="${pub_links[key]}">${key}</a>&nbsp;&nbsp;/`
-    }
-    links = links.substring(12, links.length-13)
-    
-    return links
-  }
-
-  function getPubsFromArray() {
-    let pubs = []
-    for (let item of publications) {
-      let pub = {...item}
-      pub['authors'] = getAuthorHtml(pub['authors'], ownername, pub['equal'])
-      pub['links'] = getPaperLinks(pub['links'])
-      pubs.push(pub)
-    }
-    return pubs
-  }
-
-  let app = createApp({
-    data() {
-      return {
-        currentYear: (new Date()).getFullYear(),
-        pubs: getPubsFromArray()
-      }
-    }
-  }).component('my-publication', {
-    props: ['pub'],
-    template: `
-      <div class="publication">
-        <div class="columns" style="margin-bottom: 0em">
-          <div class="column is-3 pub-img">
-            <div class="image">
-              <img v-bind:src="pub.figure">
-            </div>
-          </div>
-          <div class="column is-9 pub-info">
-            <p class="pub-title">
-              {{ pub.title }}
-            </p>
-            <em style="font-weight: normal;">{{ pub.publisher }}</em>
-            <p class="pub-authors">
-              <span v-html="pub.authors"></span>
-            </p>
-            <div class="pub-links">
-              <span v-html="pub.links"></span>
-              <span v-if="bibLinkActive">&nbsp;&nbsp;/&nbsp;&nbsp;<a v-on:click="bibtexActive=!bibtexActive">bibtex</a></span>
-            </div>
-            <p v-if="abstarctActive" class="pub-abstract">{{ pub.abstract }}</p>
-          </div>
-        </div>
-
-        <div v-if="bibtexActive">
-            <pre class="code pub-code"><code>{{ pub.bibtex }}</code></pre>
-        </div>
-      </div>
-    `,
-    data: function() {
-      return {
-        bibtexActive: false,
-        bibLinkActive: this.pub.bibtex != null && this.pub.bibtex != undefined && this.pub.bibtex != '',
-        abstarctActive: this.pub.abstract != null && this.pub.abstract != undefined && this.pub.abstract != ''
-      }
-    },
-  }).mount('#app')
-</script>
-
-<script src="js/LAppDefine.js"></script>
-<script src="js/live2d.js"></script>
-<script type="module">
-  let tex_id = (new Date().getTime()) % 2
-  console.log(tex_id, "[0 is hijiki; 1 is tototo]")
-  loadlive2d("live2d", LAppDefine.MODELS[0][tex_id])
-</script>
-
 </html>
