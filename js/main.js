@@ -31,13 +31,17 @@ import { createApp } from 'vue'
     //   "abstract": ''
     // },
     {
-      "figure": '',
+      "figure": './images/teasers/truman.gif',
       "title": 'Scaling Up Dynamic Human-Scene Interaction Modeling',
       "publisher": 'CVPR 2024',
       "authors": ['Nan Jiang', 'Zhiyuan Zhang', 'Hongjie Li', 'Xiaoxuan Ma', 'Zan Wang', 'Yixin Chen', 'Tengyu Liu', 'Yixin Zhu', 'Siyuan Huang'],
       "equal": ['Nan Jiang', 'Zhiyuan Zhang'],
       "links": {
+        "paper": 'https://arxiv.org/pdf/2403.08629.pdf',
+        "arXiv": 'https://arxiv.org/abs/2403.08629',
         "project": 'https://jnnan.github.io/trumans/',
+        "code": 'https://huggingface.co/spaces/jnnan/trumans/tree/main',
+        "huggingface": 'https://huggingface.co/spaces/jnnan/trumans'
       },
       "bibtex": `@inproceedings{jiang2024scaling,
   title={Scaling Up Dynamic Human-Scene Interaction Modeling},
@@ -45,17 +49,28 @@ import { createApp } from 'vue'
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2024}
 }`,
-      "abstract": ''
+      "abstract": '⛷ We introduce TRUMANS, a large-scale MoCap dataset, comprising over 15 hours of diverse human behaviors across 100 dynamic indoor scenes. We further propose a diffusion-based autoregressive generative model for scaling up the human-scene interaction modeling.'
     },
     {
-      "figure": '',
+      "figure": './images/teasers/afford-motion.gif',
       "title": 'Move as You Say, Interact as You Can: Language-guided Human Motion Generation with Scene Affordance',
       "publisher": 'CVPR 2024',
       "authors": ['Zan Wang', 'Yixin Chen', 'Baoxiong Jia', 'Puhao Li', 'Jinlu Zhang', 'Jingze Zhang', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Siyuan Huang'],
       "equal": [],
-      "links": {},
-      "bibtex": ``,
-      "abstract": ''
+      "links": {
+        "paper": "https://afford-motion.github.io/static/pdfs/paper.pdf",
+        "arXiv": 'https://arxiv.org/abs/2403.18036',
+        "supp": 'https://afford-motion.github.io/static/pdfs/supp.pdf',
+        "project": 'https://afford-motion.github.io/',
+        "code": 'https://github.com/afford-motion/afford-motion'
+      },
+      "bibtex": `@inproceedings{wang2024move,
+  title={Move as You Say, Interact as You Can: Language-guided Human Motion Generation with Scene Affordance},
+  author={Wang, Zan and Chen, Yixin and Jia, Baoxiong and Li, Puhao and Zhang, Jinlu and Zhang, Jingze and Liu, Tengyu and Zhu, Yixin and Liang, Wei and Huang, Siyuan},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}`,
+      "abstract": '⛹️‍♀️ We introduce a novel two-stage framework that employs scene affordance as an intermediate representation, effectively linking 3D scene grounding and conditional motion generation.'
     },
     {
       "figure": './images/teasers/scenediffuser.png',
@@ -77,7 +92,7 @@ import { createApp } from 'vue'
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2023}
 }`,
-      "abstract": ''
+      "abstract": '🦾 We introduce SceneDiffuser, a conditional generative model for 3D scene understanding. SceneDiffuser is applicable to various scene-conditioned 3D tasks: (a) human pose generation, (b) human motion generation, (c) dexterous grasp generation, (d) path planning for 3D navigation with goals, and (e) motion planning for robot arms.'
     },
     {
       "figure": './images/teasers/gvue.png',
@@ -96,7 +111,7 @@ import { createApp } from 'vue'
   journal={arXiv preprint arXiv:2211.15402},
   year={2022}
 }`,
-      "abstract": ''
+      "abstract": '🛠 We present General-purpose Visual Understanding Evaluation (G-VUE), a novel comprehensive benchmark for general-purpose vision, which consists of 11 meticulously chosen tasks. G-VUE covers the full spectrum of visual skills over four domains: Perceive, Ground, Reason and Act.'
     },
     {
       "figure": './images/teasers/humanise.png',
@@ -117,7 +132,7 @@ import { createApp } from 'vue'
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2022}
 }`,
-      "abstract": ''
+      "abstract": '🛌 We propose a large-scale and semantic-rich human-scene interaction dataset, HUMANISE. It has language description for each human-scene interaction. HUMANISE enables a new task: language-conditioned human motion generation in 3D scenes.'
     },
     {
       "figure": './images/teasers/pearl.png',
@@ -134,7 +149,7 @@ import { createApp } from 'vue'
   journal={arXiv preprint arXiv:2105.04088},
   year={2021}
 }`,
-      "abstract": ''
+      "abstract": '🏠 We propose a fine-grained action definition for Scene Rearrangement Planning (SRP) and introduce a large-scale SRP dataset. We also introduce a novel learning paradigm to efficiently train an agent through self-playing, without any prior knowledge.'
     },
   ]
 
@@ -187,23 +202,23 @@ import { createApp } from 'vue'
   }).component('my-publication', {
     props: ['pub'],
     template: `
-      <div class="box">
+      <div class="block">
         <div class="columns is-variable is-2">
           <div class="column is-3">
-            <div class="image">
+            <div class="image p-thumbnail">
               <img v-bind:src="pub.figure">
             </div>
           </div>
 
           <div class="column is-9 p-item">
-            <h6 class="title is-6 p-title">{{ pub.title }}</h6>
+            <p class="p-title">{{ pub.title }}</p>
             <p class="p-publisher">{{ pub.publisher }}</p>
             <p class="p-author"><span v-html="pub.authors"></span></p>
-            <div class="p-link">
+            <p class="p-link">
               <span v-html="pub.links"></span>
               <span v-if="bibLinkActive">&nbsp;&nbsp;/&nbsp;&nbsp;<a v-on:click="bibtexActive=!bibtexActive">bibtex</a></span>
-            </div>
-            <p v-if="abstarctActive" class="pub-abstract">{{ pub.abstract }}</p>
+            </p>
+            <p class="p-abstract" v-if="abstarctActive"> {{ pub.abstract }}</p>
           </div>
         </div>
 

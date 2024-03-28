@@ -1,10 +1,16 @@
 :root {
   --main-bg-color: #fafafa;
-  --main-bg-darker-color: #eaeaea;
+  --main-bg-darker-color: #f5f5f5;
+  --main-bg-darkest-color: #eaeaea;
   --main-dark-color: #8a8a8a;
   --main-darker-color: #4a4a4a;
   --main-light-color: #dc2f02;
-  /* --main-light-color: #f94144; */
+  --main-lighter-color: #FCECEA;
+  --main-light-color-second: #AFDBF5;
+  --main-lighter-color-second: #F0F8FF;
+  --main-light-color-third: #FED766;
+  --main-lighter-color-third: #FFFAE6;
+  --margin-after-pub-item: 0.25em;
 }
 
 html {
@@ -34,7 +40,7 @@ body {
 hr {
   height: 1px;
   margin: 1em 0em;
-  background-color: var(--main-bg-darker-color);
+  background-color: var(--main-bg-darkest-color);
 }
 
 .nav-item {
@@ -123,32 +129,40 @@ hr {
   text-decoration: none;
 }
 
-
+.p-thumbnail {
+  padding-top: 0.32em;
+}
 
 .p-item .p-title {
-  margin-bottom: 0.5em;
+  margin-bottom: var(--margin-after-pub-item);
   font-size: 1.15em;
   font-weight: bold;
   line-height: 1.2;
-}
-
-.p-item .p-publisher {
-  margin-bottom: 0.5em;
-  font-size: 0.95em;
-  font-weight: bold;
-  font-style: italic;
   color: var(--main-darker-color);
 }
 
+.p-item .p-publisher {
+  margin-bottom: var(--margin-after-pub-item);
+  font-size: 0.75em;
+  font-weight: normal;
+  color: var(--main-light-color);
+  background-color: var(--main-lighter-color);
+  padding: 0.1em 0.6em;
+  border-radius: 0.35em;
+  width: fit-content;
+}
+
 .p-item .p-author {
-  margin-bottom: 0.5em;
+  margin-bottom: var(--margin-after-pub-item);
   font-size: 1em;
   font-weight: normal;
+  line-height: 1.2;
   color: var(--main-darker-color);
 }
 
 .p-item .p-author a {
   color: var(--main-dark-color);
+  text-decoration: none;
 }
 
 .p-item .p-author a:hover {
@@ -156,11 +170,29 @@ hr {
   text-decoration: underline;
 }
 
+.p-item .p-link {
+  margin-bottom: var(--margin-after-pub-item);
+  font-size: 1em;
+  font-weight: normal;
+}
+
 .p-item .p-link a {
+  color: var(--main-light-color);
+  text-decoration: underline;
+}
+
+.p-item .p-link a:hover {
   color: var(--main-light-color);
   text-decoration: none;
 }
 
-.p-item .p-link a:hover {
-  text-decoration: underline;
+.p-item .p-abstract {
+  font-size: 0.9em;
+  font-weight: normal;
+  text-align: justify;
+  line-height: 1.2;
+  color: var(--main-darker-color);
+  padding: 0.5em 0.6em 0.5em 1.2em;
+  background-color: var(--main-lighter-color-second);
+  border-left: var(--main-light-color-second) 0.35em solid;
 }
