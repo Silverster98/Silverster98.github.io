@@ -33,7 +33,7 @@ import { createApp } from 'vue'
     {
       "figure": './images/teasers/truman.gif',
       "title": 'Scaling Up Dynamic Human-Scene Interaction Modeling',
-      "publisher": 'CVPR 2024',
+      "publisher": 'CVPR 2024, <b>Highlight</b>',
       "authors": ['Nan Jiang', 'Zhiyuan Zhang', 'Hongjie Li', 'Xiaoxuan Ma', 'Zan Wang', 'Yixin Chen', 'Tengyu Liu', 'Yixin Zhu', 'Siyuan Huang'],
       "equal": ['Nan Jiang', 'Zhiyuan Zhang'],
       "links": {
@@ -54,7 +54,7 @@ import { createApp } from 'vue'
     {
       "figure": './images/teasers/afford-motion.gif',
       "title": 'Move as You Say, Interact as You Can: Language-guided Human Motion Generation with Scene Affordance',
-      "publisher": 'CVPR 2024',
+      "publisher": 'CVPR 2024, <b>Highlight</b>',
       "authors": ['Zan Wang', 'Yixin Chen', 'Baoxiong Jia', 'Puhao Li', 'Jinlu Zhang', 'Jingze Zhang', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Siyuan Huang'],
       "equal": [],
       "links": {
@@ -212,7 +212,7 @@ import { createApp } from 'vue'
 
           <div class="column is-9 p-item">
             <p class="p-title">{{ pub.title }}</p>
-            <p class="p-publisher">{{ pub.publisher }}</p>
+            <p class="p-publisher"><span v-html="pub.publisher"></span></p>
             <p class="p-author"><span v-html="pub.authors"></span></p>
             <p class="p-link">
               <span v-html="pub.links"></span>
