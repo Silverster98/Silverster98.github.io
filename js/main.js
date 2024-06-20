@@ -41,6 +41,7 @@ import { createApp } from 'vue'
         "arXiv": 'https://arxiv.org/abs/2403.08629',
         "project": 'https://jnnan.github.io/trumans/',
         "code": 'https://huggingface.co/spaces/jnnan/trumans/tree/main',
+        "data": 'https://github.com/jnnan/trumans_utils',
         "huggingface": 'https://huggingface.co/spaces/jnnan/trumans'
       },
       "bibtex": `@inproceedings{jiang2024scaling,
