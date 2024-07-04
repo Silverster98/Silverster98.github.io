@@ -18,6 +18,7 @@ import { createApp } from 'vue'
     'Song-Chun Zhu': 'http://www.stat.ucla.edu/~sczhu/',
     'Jinlu Zhang': 'https://jinluzhang.site/',
     'Nan Jiang': 'https://jnnan.github.io/',
+    'Jiaxin Li': 'https://GauleeJX.github.io/',
   }
   let publications = [
     // {
@@ -30,6 +31,40 @@ import { createApp } from 'vue'
     //   "bibtex": ``,
     //   "abstract": ''
     // },
+    {
+      "figure": './images/teasers/plato.png',
+      "title": 'Mastering Scene Rearrangement with Expert-assisted Curriculum Learning and Adaptive Trade-Off Tree-Search',
+      "publisher": 'IROS 2024',
+      "authors": ['Zan Wang', 'Hanqing Wang', 'Wei Liang'],
+      "equal": ['Zan Wang', 'Hanqing Wang'],
+      "links": {
+        "paper": '/',
+      },
+      "bibtex": `@inproceedings{wang2024mastering,
+  title={Mastering Scene Rearrangement with Expert-assisted Curriculum Learning and Adaptive Trade-Off Tree-Search},
+  author={Wang, Zan and Wang, Hanqing and Liang, Wei},
+  booktitle={International Conference on Intelligent Robots and Systems (IROS)},
+  year={2024}
+}`,
+      "abstract": '🛋️ We propose PLATO for solving scene rearrangement planning (SRP). PLATO integrates a RL policy trained with a novel expert-assisted curriculum learning paradigm (PL) and a tree-search-based planner enhanced by an adaptive trade-off strategy.'
+    },
+    {
+      "figure": './images/teasers/tosa.png',
+      "title": 'Visual Loop Closure Detection with Thorough Temporal and Spatial Context Exploitation',
+      "publisher": 'IROS 2024',
+      "authors": ['Jiaxin Li', 'Zan Wang', 'Huijun Di', 'Jian Li', 'Wei Liang'],
+      "equal": [],
+      "links": {
+        "paper": '/',
+      },
+      "bibtex": `@inproceedings{li2024visual,
+  title={Visual Loop Closure Detection with Thorough Temporal and Spatial Context Exploitation},
+  author={Li, Jiaxin and Wang, Zan and Di, Huijun and Li, Jian and Liang, Wei},
+  booktitle={International Conference on Intelligent Robots and Systems (IROS)},
+  year={2024}
+}`,
+      "abstract": '🏎️ We propose to leverage the global temporal and local spatial-temporal information for loop closure detection.'
+    },
     {
       "figure": './images/teasers/truman.gif',
       "title": 'Scaling Up Dynamic Human-Scene Interaction Modeling',
@@ -154,7 +189,7 @@ import { createApp } from 'vue'
     },
   ]
 
-  function getAuthorHtml(authors, ownernames, equal) {
+  function getAuthorHtml(authors, ownername, equal) {
     let dom = []
     for (let a of authors) {
       let ec = equal.includes(a) ? '*' : ''
@@ -162,7 +197,7 @@ import { createApp } from 'vue'
         dom.push(`<span><strong>${a}` + ec + `</strong></span>`)
       } else {
         if (co_authors_link[a] === undefined) {
-          dom.push(`<span><a href="/">${a}` + ec + `</a></span>`)
+          dom.push(`<span><a>${a}` + ec + `</a></span>`)
         } else {
           dom.push(`<span><a href="${co_authors_link[a]}">${a}` + ec + `</a></span>`)
         }
