@@ -32,13 +32,33 @@ import { createApp } from 'vue'
     //   "abstract": ''
     // },
     {
+      "figure": './images/teasers/r2g.png',
+      "title": 'R2G: Reasoning to Ground in 3D Scenes',
+      "publisher": 'arXiv',
+      "authors": ['Yixuan Li', 'Zan Wang', 'Wei Liang'],
+      "equal": [],
+      "links": {
+        "arXiv": 'https://arxiv.org/abs/2408.13499',
+      },
+      "bibtex": `@article{li2024r2g,
+  title={R2G: Reasoning to Ground in 3D Scenes},
+  author={Li, Yixuan and Wang, Zan and Liang, Wei},
+  journal={arXiv preprint arXiv:2408.13499},
+  year={2024}
+}`,
+      "abstract": '🏗️ We propose Reasoning to Ground (R2G), a neural symbolic model that grounds the target objects within 3D scenes in a reasoning manner.'
+    },
+    {
       "figure": './images/teasers/plato.png',
       "title": 'Mastering Scene Rearrangement with Expert-assisted Curriculum Learning and Adaptive Trade-Off Tree-Search',
       "publisher": 'IROS 2024',
       "authors": ['Zan Wang', 'Hanqing Wang', 'Wei Liang'],
       "equal": ['Zan Wang', 'Hanqing Wang'],
       "links": {
-        "paper": '/',
+        "paper": 'https://pl-ato.github.io/static/pdfs/paper.pdf',
+        "project": 'https://pl-ato.github.io/',
+        "code": 'https://github.com/pl-ato/PLATO',
+        "data": 'https://1drv.ms/f/c/a3c8b9329182f3c6/EgwV7Q3qvDdEjMUe_T_D7bYBefoO_vpB0M5C3L6MZCNoHw?e=ZGSxjo'
       },
       "bibtex": `@inproceedings{wang2024mastering,
   title={Mastering Scene Rearrangement with Expert-assisted Curriculum Learning and Adaptive Trade-Off Tree-Search},
@@ -55,7 +75,8 @@ import { createApp } from 'vue'
       "authors": ['Jiaxin Li', 'Zan Wang', 'Huijun Di', 'Jian Li', 'Wei Liang'],
       "equal": [],
       "links": {
-        "paper": '/',
+        "paper": 'https://gauleejx.github.io/IROS2024_TOSA/static/pdfs/TOSA.pdf',
+        "project": 'https://gauleejx.github.io/IROS2024_TOSA/'
       },
       "bibtex": `@inproceedings{li2024visual,
   title={Visual Loop Closure Detection with Thorough Temporal and Spatial Context Exploitation},
