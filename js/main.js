@@ -19,6 +19,7 @@ import { createApp } from 'vue'
     'Jinlu Zhang': 'https://jinluzhang.site/',
     'Nan Jiang': 'https://jnnan.github.io/',
     'Jiaxin Li': 'https://GauleeJX.github.io/',
+    'Yixuan Li': 'https://yixxuan-li.github.io/'
   }
   let publications = [
     // {
@@ -66,14 +67,14 @@ import { createApp } from 'vue'
   booktitle={International Conference on Intelligent Robots and Systems (IROS)},
   year={2024}
 }`,
-      "abstract": '🛋️ We propose PLATO for solving scene rearrangement planning (SRP). PLATO integrates a RL policy trained with a novel expert-assisted curriculum learning paradigm (PL) and a tree-search-based planner enhanced by an adaptive trade-off strategy.'
+      "abstract": '🛋️ We solve scene rearrangement planning by introducing an expert-assisted curriculum learning paradigm and a tree-search-based planner enhanced by an adaptive trade-off strategy.'
     },
     {
       "figure": './images/teasers/tosa.png',
       "title": 'Visual Loop Closure Detection with Thorough Temporal and Spatial Context Exploitation',
       "publisher": 'IROS 2024',
       "authors": ['Jiaxin Li', 'Zan Wang', 'Huijun Di', 'Jian Li', 'Wei Liang'],
-      "equal": [],
+      "equal": ['Jiaxin Li', 'Zan Wang'],
       "links": {
         "paper": 'https://gauleejx.github.io/IROS2024_TOSA/static/pdfs/TOSA.pdf',
         "project": 'https://gauleejx.github.io/IROS2024_TOSA/'
@@ -93,7 +94,7 @@ import { createApp } from 'vue'
       "authors": ['Nan Jiang', 'Zhiyuan Zhang', 'Hongjie Li', 'Xiaoxuan Ma', 'Zan Wang', 'Yixin Chen', 'Tengyu Liu', 'Yixin Zhu', 'Siyuan Huang'],
       "equal": ['Nan Jiang', 'Zhiyuan Zhang'],
       "links": {
-        "paper": 'https://arxiv.org/pdf/2403.08629.pdf',
+        "paper": 'https://openaccess.thecvf.com/content/CVPR2024/papers/Jiang_Scaling_Up_Dynamic_Human-Scene_Interaction_Modeling_CVPR_2024_paper.pdf',
         "arXiv": 'https://arxiv.org/abs/2403.08629',
         "project": 'https://jnnan.github.io/trumans/',
         "code": 'https://huggingface.co/spaces/jnnan/trumans/tree/main',
@@ -115,7 +116,7 @@ import { createApp } from 'vue'
       "authors": ['Zan Wang', 'Yixin Chen', 'Baoxiong Jia', 'Puhao Li', 'Jinlu Zhang', 'Jingze Zhang', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Siyuan Huang'],
       "equal": [],
       "links": {
-        "paper": "https://afford-motion.github.io/static/pdfs/paper.pdf",
+        "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_Move_as_You_Say_Interact_as_You_Can_Language-guided_Human_CVPR_2024_paper.pdf",
         "arXiv": 'https://arxiv.org/abs/2403.18036',
         "supp": 'https://afford-motion.github.io/static/pdfs/supp.pdf',
         "project": 'https://afford-motion.github.io/',
@@ -136,7 +137,7 @@ import { createApp } from 'vue'
       "authors": ['Siyuan Huang', 'Zan Wang', 'Puhao Li', 'Baoxiong Jia', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Song-Chun Zhu'],
       "equal": ['Siyuan Huang', 'Zan Wang'],
       "links": {
-        "paper": "https://scenediffuser.github.io/paper.pdf",
+        "paper": "https://openaccess.thecvf.com/content/CVPR2023/papers/Huang_Diffusion-Based_Generation_Optimization_and_Planning_in_3D_Scenes_CVPR_2023_paper.pdf",
         "arXiv": 'https://arxiv.org/abs/2301.06015',
         "supp": 'https://scenediffuser.github.io/supp.pdf',
         "project": 'https://scenediffuser.github.io/',
@@ -177,7 +178,7 @@ import { createApp } from 'vue'
       "authors": ['Zan Wang', 'Yixin Chen', 'Tengyu Liu', 'Yixin Zhu', 'Wei Liang', 'Siyuan Huang'],
       "equal": [],
       "links": {
-        "paper": 'https://silvester.wang/HUMANISE/paper.pdf',
+        "paper": 'https://proceedings.neurips.cc/paper_files/paper/2022/file/6030db5195150ac86d942186f4abdad8-Paper-Conference.pdf',
         "arXiv": 'https://arxiv.org/abs/2210.09729',
         "project": 'https://silvester.wang/HUMANISE/',
         "code": 'https://github.com/Silverster98/HUMANISE',
@@ -229,10 +230,22 @@ import { createApp } from 'vue'
 
   function getPaperLinks(pub_links) {
     let links = ''
-    for (let key in pub_links) {
-      links += `&nbsp;&nbsp;<a href="${pub_links[key]}">${key}</a>&nbsp;&nbsp;/`
+
+    // paper link
+    if ('paper' in pub_links) {
+      links += `<a href="${pub_links['paper']}">Paper</a>&nbsp;&nbsp;/&nbsp;&nbsp;`
     }
-    links = links.substring(12, links.length-13)
+    else if ('arXiv' in pub_links) {
+      links += `<a href="${pub_links['arXiv']}">Paper</a>&nbsp;&nbsp;/&nbsp;&nbsp;`
+    }
+    else {
+      links += `<a>Paper Coming Soon</a>&nbsp;&nbsp;/&nbsp;&nbsp;`
+    }
+
+    // project link
+    if ('project' in pub_links) {
+      links += `<a href="${pub_links['project']}">Project</a>&nbsp;&nbsp;/&nbsp;&nbsp;`
+    }
     
     return links
   }
@@ -260,27 +273,20 @@ import { createApp } from 'vue'
     props: ['pub'],
     template: `
       <div class="block">
-        <div class="columns is-variable is-2">
-          <div class="column is-3">
-            <div class="image p-thumbnail">
-              <img v-bind:src="pub.figure">
-            </div>
-          </div>
-
-          <div class="column is-9 p-item">
+        <div class="columns">
+          <div class="column is-12 p-item">
             <p class="p-title">{{ pub.title }}</p>
             <p class="p-publisher"><span v-html="pub.publisher"></span></p>
             <p class="p-author"><span v-html="pub.authors"></span></p>
             <p class="p-link">
               <span v-html="pub.links"></span>
-              <span v-if="bibLinkActive">&nbsp;&nbsp;/&nbsp;&nbsp;<a v-on:click="bibtexActive=!bibtexActive">bibtex</a></span>
+              <span v-if="bibLinkActive"><a v-on:click="bibtexActive=!bibtexActive">Bibtex</a></span>
             </p>
-            <p class="p-abstract" v-if="abstarctActive"> {{ pub.abstract }}</p>
-          </div>
-        </div>
 
-        <div v-if="bibtexActive">
-            <pre class="code pub-code"><code>{{ pub.bibtex }}</code></pre>
+            <div v-if="bibtexActive">
+              <pre class="code pub-code"><code>{{ pub.bibtex }}</code></pre>
+            </div>
+          </div>
         </div>
       </div>
     `,
