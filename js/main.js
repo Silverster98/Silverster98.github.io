@@ -33,6 +33,42 @@ import { createApp } from 'vue'
     //   "abstract": ''
     // },
     {
+      "figure": './',
+      "title": "X's Day: Personality-Driven Virtual Human Behavior Generation",
+      "publisher": 'TVCG 2025 (VR Journal Track)',
+      "authors": ["Haoyang Li", "Zan Wang", "Wei Liang", "Yizhuo Wang"],
+      "equal": [],
+      "links": {
+        "paper": "https://behavior.agent-x.cn/static/files/paper.pdf",
+        "project": 'https://behavior.agent-x.cn/',
+      },
+      "bibtex": `@article{li2025personality,
+  title= {X's Day: Personality-Driven Virtual Human Behavior Generation},
+  author = {Li, Haoyang and Wang, Zan and Liang, Wei and Wang, Yizhuo},
+  journal = {IEEE Transactions on Visualization and Computer Graphics (TVCG)},
+  year = {2025}
+}`,
+      "abstract": ''
+    },
+    {
+      "figure": './',
+      "title": 'FloNa: Floor Plan Guided Embodied Visual Navigation',
+      "publisher": 'AAAI 2025, <b>Oral</b>',
+      "authors": ["Jiaxin Li", "Weiqi Huang", "Zan Wang", "Wei Liang", "Huijun Di", "Feng Liu"],
+      "equal": [],
+      "links": {
+        "arXiv": 'https://arxiv.org/abs/2412.18335',
+        "project": 'https://gauleejx.github.io/flona/',
+      },
+      "bibtex": `@inproceedings{li2024flona,
+  title={FloNa: Floor Plan Guided Embodied Visual Navigation},
+  author={Li, Jiaxin and Huang, Weiqi and Wang, Zan and Liang, Wei and Di, Huijun and Liu, Feng},
+  booktitle={AAAI Conference on Artificial Intelligence (AAAI)},
+  year={2025}
+}`,
+      "abstract": ''
+    },
+    {
       "figure": './images/teasers/r2g.png',
       "title": 'R2G: Reasoning to Ground in 3D Scenes',
       "publisher": 'arXiv',
@@ -56,7 +92,7 @@ import { createApp } from 'vue'
       "authors": ['Zan Wang', 'Hanqing Wang', 'Wei Liang'],
       "equal": ['Zan Wang', 'Hanqing Wang'],
       "links": {
-        "paper": 'https://pl-ato.github.io/static/pdfs/paper.pdf',
+        "paper": 'https://ieeexplore.ieee.org/abstract/document/10802526',
         "project": 'https://pl-ato.github.io/',
         "code": 'https://github.com/pl-ato/PLATO',
         "data": 'https://1drv.ms/f/c/a3c8b9329182f3c6/EgwV7Q3qvDdEjMUe_T_D7bYBefoO_vpB0M5C3L6MZCNoHw?e=ZGSxjo'
@@ -76,7 +112,7 @@ import { createApp } from 'vue'
       "authors": ['Jiaxin Li', 'Zan Wang', 'Huijun Di', 'Jian Li', 'Wei Liang'],
       "equal": ['Jiaxin Li', 'Zan Wang'],
       "links": {
-        "paper": 'https://gauleejx.github.io/IROS2024_TOSA/static/pdfs/TOSA.pdf',
+        "paper": 'https://ieeexplore.ieee.org/document/10802228',
         "project": 'https://gauleejx.github.io/IROS2024_TOSA/'
       },
       "bibtex": `@inproceedings{li2024visual,
