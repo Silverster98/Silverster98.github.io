@@ -34,19 +34,40 @@ import { createApp } from 'vue'
     // },
     {
       "figure": './',
+      "title": 'InteractAnything: Zero-shot Human Object Interaction Synthesis via LLM Feedback and Object Affordance Parsing',
+      "publisher": 'CVPR 2025, <b>Highlight</b>',
+      "authors": ['Jinlu Zhang', 'Yixin Chen', 'Zan Wang', 'Jie Yang', 'Yizhou Wang', 'Siyuan Huang'],
+      "equal": [],
+      "links": {
+        "project": 'https://jinluzhang.site/projects/interactanything/',
+      },
+      "bibtex": `@inproceedings{zhang2025interactanything,
+  title={InteractAnything: Zero-shot Human Object Interaction Synthesis via LLM Feedback and Object Affordance Parsing},
+  author={Zhang, Jinlu and Chen, Yixin and Wang, Zan and Yang, Jie and Wang, Yizhou and Huang, Siyuan},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
+}`,
+      "abstract": ''
+    },
+    {
+      "figure": './',
       "title": "X's Day: Personality-Driven Virtual Human Behavior Generation",
       "publisher": 'TVCG 2025 (VR Journal Track)',
       "authors": ["Haoyang Li", "Zan Wang", "Wei Liang", "Yizhuo Wang"],
       "equal": [],
       "links": {
-        "paper": "https://behavior.agent-x.cn/static/files/paper.pdf",
+        "paper": "https://ieeexplore.ieee.org/abstract/document/10918845",
         "project": 'https://behavior.agent-x.cn/',
       },
-      "bibtex": `@article{li2025personality,
-  title= {X's Day: Personality-Driven Virtual Human Behavior Generation},
-  author = {Li, Haoyang and Wang, Zan and Liang, Wei and Wang, Yizhuo},
-  journal = {IEEE Transactions on Visualization and Computer Graphics (TVCG)},
-  year = {2025}
+      "bibtex": `@article{li2025x,
+  title={X's Day: Personality-Driven Virtual Human Behavior Generation},
+  author={Li, Haoyang and Wang, Zan and Liang, Wei and Wang, Yizhuo},
+  journal={IEEE Transactions on Visualization and Computer Graphics (TVCG)},
+  volume={31},
+  number={5},
+  pages={3514--3524},
+  year={2025},
+  publisher={IEEE}
 }`,
       "abstract": ''
     },
@@ -57,6 +78,7 @@ import { createApp } from 'vue'
       "authors": ["Jiaxin Li", "Weiqi Huang", "Zan Wang", "Wei Liang", "Huijun Di", "Feng Liu"],
       "equal": [],
       "links": {
+        "paper": 'https://ojs.aaai.org/index.php/AAAI/article/view/33601',
         "arXiv": 'https://arxiv.org/abs/2412.18335',
         "project": 'https://gauleejx.github.io/flona/',
       },
@@ -71,17 +93,21 @@ import { createApp } from 'vue'
     {
       "figure": './images/teasers/r2g.png',
       "title": 'R2G: Reasoning to Ground in 3D Scenes',
-      "publisher": 'arXiv',
+      "publisher": 'PR 2025',
       "authors": ['Yixuan Li', 'Zan Wang', 'Wei Liang'],
       "equal": [],
       "links": {
+        "paper": 'https://www.sciencedirect.com/science/article/pii/S0031320325003887',
         "arXiv": 'https://arxiv.org/abs/2408.13499',
+        "project": 'https://sites.google.com/view/reasoning-to-ground',
       },
       "bibtex": `@article{li2024r2g,
   title={R2G: Reasoning to Ground in 3D Scenes},
   author={Li, Yixuan and Wang, Zan and Liang, Wei},
-  journal={arXiv preprint arXiv:2408.13499},
-  year={2024}
+  journal = {Pattern Recognition (PR)},
+  volume = {168},
+  pages = {111728},
+  year={2025}
 }`,
       "abstract": '🏗️ We propose Reasoning to Ground (R2G), a neural symbolic model that grounds the target objects within 3D scenes in a reasoning manner.'
     },
