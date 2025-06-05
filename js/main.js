@@ -39,6 +39,7 @@ import { createApp } from 'vue'
       "authors": ['Jinlu Zhang', 'Yixin Chen', 'Zan Wang', 'Jie Yang', 'Yizhou Wang', 'Siyuan Huang'],
       "equal": [],
       "links": {
+        "paper": 'https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_InteractAnything_Zero-shot_Human_Object_Interaction_Synthesis_via_LLM_Feedback_and_CVPR_2025_paper.pdf',
         "project": 'https://jinluzhang.site/projects/interactanything/',
       },
       "bibtex": `@inproceedings{zhang2025interactanything,
