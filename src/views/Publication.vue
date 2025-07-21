@@ -20,7 +20,8 @@ let coAuthorsLinks = {
   'Jinlu Zhang': 'https://jinluzhang.site/',
   'Nan Jiang': 'https://jnnan.github.io/',
   'Jiaxin Li': 'https://GauleeJX.github.io/',
-  'Yixuan Li': 'https://yixxuan-li.github.io/'
+  'Yixuan Li': 'https://yixxuan-li.github.io/',
+  'Haoyang Li': 'https://lihaoyang.netlify.app/',
 }
 let publications = [
   // {
