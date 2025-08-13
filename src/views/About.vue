@@ -48,7 +48,7 @@
             </p>
             <p>
               At BIT, I was mentored by <a href="https://liangwei-bit.github.io/web/">Prof. Wei Liang</a>.
-              From Oct. 2021 to Nov. 2024, I interned at the <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a>, working under the supervision of <a href="https://siyuanhuang.com/">Dr. Siyuan Huang</a>, the vision team leader.
+              From Oct. 2021 to Nov. 2024, I interned at the <a href="https://www.bigai.ai/">Beijing Institute for General Artificial Intelligence (BIGAI)</a>, under the supervision of the vision team leader <a href="https://siyuanhuang.com/">Dr. Siyuan Huang</a>.
             </p>
           </div>
         </div>

@@ -36,6 +36,24 @@ let publications = [
   // },
   {
     "figure": './',
+    "title": 'Spatial-Temporal Multi-Scale Quantization for Flexible Motion Generation',
+    "publisher": 'arXiv 2025',
+    "authors": ['Zan Wang', 'Jingze Zhang', 'Yixin Chen', 'Baoxiong Jia', 'Wei Liang', 'Siyuan Huang'],
+    "equal": ['Zan Wang', 'Jingze Zhang'],
+    "links": {
+      "paper": 'https://www.arxiv.org/pdf/2508.08991',
+      "project": 'https://sites.google.com/view/msquantizer',
+    },
+    "bibtex": `@article{wang2025spatial,
+  title={Spatial-Temporal Multi-Scale Quantization for Flexible Motion Generation},
+  author={Wang, Zan and Zhang, Jingze and Chen, Yixin and Jia, Baoxiong, and Liang, Wei and Huang, Siyuan},
+  journal={arXiv preprint arXiv:2508.08991},
+  year={2025}
+}`,
+    "abstract": ''
+  },
+  {
+    "figure": './',
     "title": 'InteractAnything: Zero-shot Human Object Interaction Synthesis via LLM Feedback and Object Affordance Parsing',
     "publisher": 'CVPR 2025, <b>Highlight</b>',
     "authors": ['Jinlu Zhang', 'Yixin Chen', 'Zan Wang', 'Jie Yang', 'Yizhou Wang', 'Siyuan Huang'],
