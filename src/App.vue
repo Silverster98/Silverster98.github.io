@@ -15,12 +15,11 @@ watch(() => route.path, () => {
   viewTitle.value = {
     '/': 'About Me',
     '/publication': 'Publications'
-  }[route.path] || '';
+  }[route.path] || '404 Not Found';
 }, { immediate: true });
 </script>
 
 <template>
-
   <section class="section">
     <div class="container is-max-desktop">
       <nav class="level">
@@ -45,7 +44,7 @@ watch(() => route.path, () => {
         </div>
       </nav>
 
-      <h3 class="title is-3" style="padding-left: 0.3em;">{{ aboutActive ? 'About Me' : 'Publications' }}</h3>
+      <h3 class="title is-3" style="padding-left: 0.3em;">{{ viewTitle }}</h3>
       <hr>
     </div>
   </section>
