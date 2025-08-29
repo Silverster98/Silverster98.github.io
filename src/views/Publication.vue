@@ -297,7 +297,7 @@ let publications = [
 
 <template>
   <section class="section" style="padding: 0em 3em;">
-    <div class="container is-max-desktop">
+    <div class="container is-max-desktop" style="padding: 0em 0.6em;">
       <my-publication v-for="(pub, index) in publications"
         :key="index" :pubItem="pub" :owner="ownername" :coAuthorsLinks="coAuthorsLinks"></my-publication>
     </div>
